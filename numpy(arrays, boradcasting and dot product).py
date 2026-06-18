@@ -1,0 +1,146 @@
+import numpy as np
+
+# ==========================================
+# Student Performance Analyzer using NumPy
+# ==========================================
+
+# Step 1: Create marks array
+# Rows = Students
+# Columns = [Math, Physics, Computer Science]
+
+marks = np.array([
+    [85, 78, 92],
+    [70, 88, 80],
+    [90, 95, 85],
+    [60, 72, 75],
+    [88, 84, 91]
+])
+
+print("Original Marks:")
+print(marks)
+
+# ------------------------------------------
+# Array Information
+# ------------------------------------------
+
+print("\nArray Shape:", marks.shape)
+print("Number of Dimensions:", marks.ndim)
+print("Data Type:", marks.dtype)
+
+# ------------------------------------------
+# Broadcasting Example
+# ------------------------------------------
+
+# Bonus marks for each subject
+bonus = np.array([5, 3, 2])
+
+print("\nBonus Marks:")
+print(bonus)
+
+# Add bonus marks to all students
+updated_marks = marks + bonus
+
+print("\nMarks After Adding Bonus:")
+print(updated_marks)
+
+# ------------------------------------------
+# Total Marks
+# ------------------------------------------
+
+totals = np.sum(updated_marks, axis=1)
+
+print("\nTotal Marks of Each Student:")
+print(totals)
+
+# ------------------------------------------
+# Dot Product Example
+# ------------------------------------------
+
+# Subject weights
+weights = np.array([0.4, 0.3, 0.3])
+
+print("\nSubject Weights:")
+print(weights)
+
+# Calculate weighted score
+final_scores = np.dot(updated_marks, weights)
+
+print("\nFinal Weighted Scores:")
+print(np.round(final_scores, 2))
+
+# ------------------------------------------
+# Find Topper
+# ------------------------------------------
+
+topper_index = np.argmax(final_scores)
+
+print("\nTopper Information")
+print("------------------")
+print("Student Number:", topper_index + 1)
+print("Score:", round(final_scores[topper_index], 2))
+
+# ------------------------------------------
+# Subject-wise Average
+# ------------------------------------------
+
+subject_avg = np.mean(updated_marks, axis=0)
+
+print("\nSubject-wise Average:")
+print(f"Math Average      : {subject_avg[0]:.2f}")
+print(f"Physics Average   : {subject_avg[1]:.2f}")
+print(f"CS Average        : {subject_avg[2]:.2f}")
+
+# ------------------------------------------
+# Grade Assignment
+# ------------------------------------------
+
+grades = np.where(
+    final_scores >= 90, "A",
+    np.where(final_scores >= 80, "B", "C")
+)
+
+print("\nGrades:")
+for i in range(len(grades)):
+    print(f"Student {i+1}: {grades[i]}")
+
+# ------------------------------------------
+# Class Statistics
+# ------------------------------------------
+
+print("\nClass Statistics")
+print("----------------")
+print("Highest Mark :", np.max(updated_marks))
+print("Lowest Mark  :", np.min(updated_marks))
+print("Mean Mark    :", round(np.mean(updated_marks), 2))
+print("Std Dev      :", round(np.std(updated_marks), 2))
+
+# ------------------------------------------
+# Ranking Students
+# ------------------------------------------
+
+ranking = np.argsort(final_scores)[::-1]
+
+print("\nClass Ranking")
+print("-------------")
+
+for rank, student in enumerate(ranking, start=1):
+    print(
+        f"Rank {rank}: Student {student+1} "
+        f"(Score = {final_scores[student]:.2f})"
+    )
+
+# ------------------------------------------
+# Student Report Card
+# ------------------------------------------
+
+print("\nStudent Report Card")
+print("-------------------")
+
+for i in range(len(updated_marks)):
+    print(
+        f"Student {i+1} | "
+        f"Marks: {updated_marks[i]} | "
+        f"Total: {totals[i]} | "
+        f"Weighted Score: {final_scores[i]:.2f} | "
+        f"Grade: {grades[i]}"
+    )
