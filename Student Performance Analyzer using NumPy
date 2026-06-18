@@ -1,8 +1,8 @@
 import numpy as np
 
-# ==========================================
+# =========================================
 # Student Performance Analyzer using NumPy
-# ==========================================
+# =========================================
 
 # Step 1: Create marks array
 # Rows = Students
