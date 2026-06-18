@@ -10,7 +10,7 @@ Using a simple student grading system, this project calculates weighted scores, 
 
 ---
 
-## 🚀 What You'll Learn
+## 🚀 What this explains
 
 ### 1. NumPy Arrays
 
@@ -103,13 +103,13 @@ student-performance-analyzer/
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/student-performance-analyzer.git
+git clone https://github.com/Sulagn/NumPy.git
 ```
 
 Move into the project folder:
 
 ```bash
-cd student-performance-analyzer
+cd NumPy
 ```
 
 Install NumPy:
@@ -123,7 +123,7 @@ pip install numpy
 ## ▶️ Run the Project
 
 ```bash
-python student_analyzer.py
+python Student Performance Analyzer using NumPy.py
 ```
 
 ---
@@ -191,21 +191,6 @@ After completing this project, you'll understand:
 - How to perform statistical analysis using NumPy
 - How ranking systems work using `argsort()` and `argmax()`
 
----
-
-## 🔥 Challenge Extensions
-
-Try adding:
-
-- Student names instead of IDs
-- More subjects
-- CSV file input
-- Data visualization using Matplotlib
-- Grade distribution charts
-- Pass/Fail prediction
-- GPA Calculator
-
----
 
 ## 💡 Why This Project?
 
@@ -217,8 +202,5 @@ This project is intentionally small but covers the core operations used in:
 - Scientific Computing
 - Financial Analytics
 
-If you understand every line of this project, you'll have a solid foundation in NumPy's most important features.
 
----
 
-### ⭐ If you found this project helpful, consider giving the repository a star!
