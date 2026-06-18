@@ -91,9 +91,9 @@ final_scores = np.dot(updated_marks, weights)
 ```text
 student-performance-analyzer/
 │
-├── student_analyzer.py
+├── Student Performance Analyzer using NumPy.py
 ├── README.md
-└── requirements.txt
+
 ```
 
 ---
